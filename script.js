@@ -4,7 +4,7 @@
 const translations = {
     cs: {
         mainMessage: "Připravujeme něco velkého:",
-        dynamicWords: ["Inovaci", "Růstem", "Expanzí", "Technologiemi", "Budoucností", "Vizí"],
+        dynamicWords: ["Inovaci", "Růst", "Expanzi", "Technologie", "Budoucnost", "Vizi"],
         tagline: "Nová éra začíná již brzy. Naše webové stránky procházejí finálními úpravami.",
         days: "Dny",
         hours: "Hodiny",

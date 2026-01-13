@@ -90,6 +90,7 @@ h1 {
     font-size: 2.2em;
     margin-bottom: 15px;
     font-weight: normal;
+    font-family: 'Righteous', cursive; /* Apply Righteous to main message */
 }
 
 .dynamic-text-wrapper {
@@ -136,6 +137,7 @@ h1 {
     font-size: 0.9em;
     text-transform: uppercase;
     opacity: 0.8;
+    font-family: 'Righteous', cursive; /* Apply Righteous to countdown labels */
 }
 
 .language-selector {
@@ -251,27 +253,31 @@ h1 {
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.2em; /* Further reduced font size for h1 on small mobiles */
     }
 
     .dynamic-text-wrapper {
-        font-size: 1.2em;
+        font-size: 1em; /* Further reduced font size for dynamic text on small mobiles */
     }
 
     .countdown-container {
-        gap: 10px;
+        gap: 8px; /* Slightly reduced gap to save space */
     }
 
     .countdown-box {
-        min-width: 60px;
-        padding: 10px;
+        min-width: 50px;
+        padding: 8px;
     }
 
     .countdown-value {
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
 
     .social-icons a {
         font-size: 1.2em;
+    }
+
+    .language-selector {
+        gap: 12px; /* Increased gap for better touch targets */
     }
 }
