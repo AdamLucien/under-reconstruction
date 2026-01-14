@@ -1,302 +1,235 @@
 // script.js
 
-// --- Translations ---
 const translations = {
-    cs: {
-        mainMessage: "Připravujeme něco velkého:",
-        dynamicWords: ["Inovaci", "Růst", "Expanzi", "Technologie", "Budoucnost", "Vizi"],
-        tagline: "Nová éra začíná již brzy. Naše webové stránky procházejí finálními úpravami.",
-        days: "Dny",
-        hours: "Hodiny",
-        minutes: "Minuty",
-        seconds: "Sekundy",
-        emailPrefix: "E-mail:",
-        countdownFinished: "Již jsme online!"
-    },
-    en: {
-        mainMessage: "Preparing something big:",
-        dynamicWords: ["Innovation", "Growth", "Expansion", "Technology", "Future", "Vision"],
-        tagline: "A new era begins soon. Our website is undergoing final adjustments.",
-        days: "Days",
-        hours: "Hours",
-        minutes: "Minutes",
-        seconds: "Seconds",
-        emailPrefix: "E-mail:",
-        countdownFinished: "We are live!"
-    },
-    de: {
-        mainMessage: "Wir bereiten etwas Großes vor:",
-        dynamicWords: ["Innovation", "Wachstum", "Expansion", "Technologie", "Zukunft", "Vision"],
-        tagline: "Eine neue Ära beginnt bald. Unsere Website wird finalisiert.",
-        days: "Tage",
-        hours: "Stunden",
-        minutes: "Minuten",
-        seconds: "Sekunden",
-        emailPrefix: "E-Mail:",
-        countdownFinished: "Wir sind online!"
-    },
-    uk: {
-        mainMessage: "Готуємо щось грандіозне:",
-        dynamicWords: ["Інновації", "Зростанням", "Експансією", "Технологіями", "Майбутнім", "Баченням"],
-        tagline: "Нова ера розпочнеться незабаром. Наш веб-сайт проходить фінальні налаштування.",
-        days: "Дні",
-        hours: "Години",
-        minutes: "Хвилини",
-        seconds: "Секунди",
-        emailPrefix: "Електронна пошта:",
-        countdownFinished: "Ми вже онлайн!"
-    },
-    it: {
-        mainMessage: "Stiamo preparando qualcosa di grande:",
-        dynamicWords: ["Innovazione", "Crescita", "Espansione", "Tecnologia", "Futuro", "Visione"],
-        tagline: "Una nuova era inizierà presto. Il nostro sito web sta subendo le ultime modifiche.",
-        days: "Giorni",
-        hours: "Ore",
-        minutes: "Minuti",
-        seconds: "Secondi",
-        emailPrefix: "E-mail:",
-        countdownFinished: "Siamo online!"
-    },
-    zh: {
-        mainMessage: "我们正在酝酿大计划:",
-        dynamicWords: ["创新", "成长", "扩张", "科技", "未来", "愿景"],
-        tagline: "新时代即将开启。我们的网站正在进行最后的调整。",
-        days: "天",
-        hours: "小时",
-        minutes: "分钟",
-        seconds: "秒",
-        emailPrefix: "电子邮件:",
-        countdownFinished: "我们上线了！"
-    }
+  cs: {
+    title: "Lucien Systems — Tichý režim",
+    kicker: "Tichý režim",
+    headline: "Nová kapitola Lucien Systems.",
+    subhead: "Veřejné okno: Q1 2026.",
+    body: "Když je to důležité, napiš. Odpovíme do 72 hodin.",
+    dynamicLabel: "Signál",
+    dynamicWords: ["Jasnost", "Disciplína", "Přesnost", "Důvěra", "Klid", "Fokus"],
+    countdownTitle: "T-Launch",
+    targetDate: "Cíl: 17. 2. 2026",
+    replyNote: "Odpověď do 72 hodin",
+    footerTagline: "Privacy-first | Edge-native | Audit-ready",
+    days: "Dny",
+    hours: "Hodiny",
+    minutes: "Minuty",
+    seconds: "Sekundy",
+    countdownFinished: "Jsme online!"
+  },
+  en: {
+    title: "Lucien Systems — Quiet Mode",
+    kicker: "Quiet mode",
+    headline: "A new chapter for Lucien Systems.",
+    subhead: "Public window: Q1 2026.",
+    body: "If it matters, reach out. Reply within 72 hours.",
+    dynamicLabel: "Signal",
+    dynamicWords: ["Clarity", "Discipline", "Precision", "Trust", "Restraint", "Focus"],
+    countdownTitle: "T-Launch",
+    targetDate: "Target: Feb 17, 2026",
+    replyNote: "Reply within 72 hours",
+    footerTagline: "Privacy-first | Edge-native | Audit-ready",
+    days: "Days",
+    hours: "Hours",
+    minutes: "Minutes",
+    seconds: "Seconds",
+    countdownFinished: "We are live!"
+  },
+  de: {
+    title: "Lucien Systems — Ruhemodus",
+    kicker: "Ruhemodus",
+    headline: "Ein neues Kapitel für Lucien Systems.",
+    subhead: "Öffentliches Fenster: Q1 2026.",
+    body: "Wenn es wichtig ist, melden Sie sich. Antwort in 72 Stunden.",
+    dynamicLabel: "Signal",
+    dynamicWords: ["Klarheit", "Disziplin", "Präzision", "Vertrauen", "Respekt", "Stille"],
+    countdownTitle: "T-Launch",
+    targetDate: "Ziel: 17. Feb 2026",
+    replyNote: "Antwort in 72 Stunden",
+    footerTagline: "Privacy-first | Edge-native | Audit-ready",
+    days: "Tage",
+    hours: "Stunden",
+    minutes: "Minuten",
+    seconds: "Sekunden",
+    countdownFinished: "Wir sind online!"
+  },
+  uk: {
+    title: "Lucien Systems — Тихий режим",
+    kicker: "Тихий режим",
+    headline: "Нова глава для Lucien Systems.",
+    subhead: "Публічне вікно: Q1 2026.",
+    body: "Якщо це важливо, напишіть. Відповімо за 72 години.",
+    dynamicLabel: "Сигнал",
+    dynamicWords: ["Ясність", "Дисципліна", "Точність", "Довіра", "Спокій", "Фокус"],
+    countdownTitle: "T-Launch",
+    targetDate: "Ціль: 17 лютого 2026",
+    replyNote: "Відповідь за 72 години",
+    footerTagline: "Privacy-first | Edge-native | Audit-ready",
+    days: "Дні",
+    hours: "Години",
+    minutes: "Хвилини",
+    seconds: "Секунди",
+    countdownFinished: "Ми онлайн!"
+  },
+  it: {
+    title: "Lucien Systems — Modalità silenziosa",
+    kicker: "Modalità silenziosa",
+    headline: "Un nuovo capitolo per Lucien Systems.",
+    subhead: "Finestra pubblica: Q1 2026.",
+    body: "Se è importante, contattaci. Risposta entro 72 ore.",
+    dynamicLabel: "Segnale",
+    dynamicWords: ["Chiarezza", "Disciplina", "Precisione", "Fiducia", "Riservatezza", "Focus"],
+    countdownTitle: "T-Launch",
+    targetDate: "Target: 17 Feb 2026",
+    replyNote: "Risposta entro 72 ore",
+    footerTagline: "Privacy-first | Edge-native | Audit-ready",
+    days: "Giorni",
+    hours: "Ore",
+    minutes: "Minuti",
+    seconds: "Secondi",
+    countdownFinished: "Siamo online!"
+  },
+  zh: {
+    title: "Lucien Systems — 静默模式",
+    kicker: "静默模式",
+    headline: "Lucien Systems 的新篇章。",
+    subhead: "公开窗口：2026 年 Q1。",
+    body: "如属要事，请联系。72 小时内回复。",
+    dynamicLabel: "信号",
+    dynamicWords: ["清晰", "克制", "精准", "信任", "专注", "安静"],
+    countdownTitle: "倒计时",
+    targetDate: "目标：2026 年 2 月 17 日",
+    replyNote: "72 小时内回复",
+    footerTagline: "隐私优先 | 边缘原生 | 可审计",
+    days: "天",
+    hours: "小时",
+    minutes: "分钟",
+    seconds: "秒",
+    countdownFinished: "我们已上线！"
+  }
 };
 
-let currentLang = 'cs'; // Default language
+let currentLang = "cs";
+let wordInterval = null;
 
-// --- TextScramble Class ---
-class TextScramble {
-    constructor(el) {
-        this.el = el;
-        this.chars = '!<>-_\\/[]{}—=+*^?#________';
-        this.update = this.update.bind(this);
-    }
-    setText(newText) {
-        const oldText = this.el.innerText;
-        const length = Math.max(oldText.length, newText.length);
-        const promise = new Promise((resolve) => this.resolve = resolve);
-        this.queue = [];
-        for (let i = 0; i < length; i++) {
-            const from = oldText[i] || '';
-            const to = newText[i] || '';
-            const start = Math.floor(Math.random() * 40);
-            const end = start + Math.floor(Math.random() * 40);
-            this.queue.push({ from, to, start, end });
-        }
-        cancelAnimationFrame(this.frameRequest);
-        this.frame = 0;
-        this.update();
-        return promise;
-    }
-    update() {
-        let output = '';
-        let complete = 0;
-        for (let i = 0, n = this.queue.length; i < n; i++) {
-            let { from, to, start, end, char } = this.queue[i];
-            if (this.frame >= end) {
-                complete++;
-                output += to;
-            } else if (this.frame >= start) {
-                if (!char || Math.random() < 0.28) {
-                    char = this.chars[Math.floor(Math.random() * this.chars.length)];
-                    this.queue[i].char = char;
-                }
-                output += `<span class="dud">${char}</span>`;
-            } else {
-                output += from;
-            }
-        }
-        this.el.innerHTML = output;
-        if (complete === this.queue.length) {
-            this.resolve();
-        } else {
-            this.frameRequest = requestAnimationFrame(this.update);
-            this.frame++;
-        }
-    }
-}
-
-// --- Countdown Logic ---
-const countdownDate = new Date('Feb 17, 2026 00:00:00').getTime();
+const countdownDate = new Date("2026-02-17T00:00:00Z").getTime();
 let countdownInterval;
 
-function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = countdownDate - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;
-
-    document.getElementById('days-label').innerHTML = translations[currentLang].days;
-    document.getElementById('hours-label').innerHTML = translations[currentLang].hours;
-    document.getElementById('minutes-label').innerHTML = translations[currentLang].minutes;
-    document.getElementById('seconds-label').innerHTML = translations[currentLang].seconds;
-
-    if (distance < 0) {
-        clearInterval(countdownInterval);
-        document.querySelector('.countdown-container').innerHTML = `<div class="countdown-finished">${translations[currentLang].countdownFinished}</div>`;
-    }
+function byId(id) {
+  return document.getElementById(id);
 }
 
-// --- Language Switching ---
-const flagIcons = document.querySelectorAll('.flag-icon');
+function setFill(id, value) {
+  const el = byId(id);
+  if (!el) return;
+  const clamped = Math.max(0, Math.min(1, value));
+  el.style.setProperty("--fill", String(clamped));
+}
+
+function updateCountdown() {
+  const now = Date.now();
+  const distance = countdownDate - now;
+
+  if (distance <= 0) {
+    clearInterval(countdownInterval);
+    const grid = document.querySelector(".countdown-grid");
+    if (grid) {
+      grid.innerHTML = `<div class="countdown-finished">${translations[currentLang].countdownFinished}</div>`;
+    }
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const daysEl = byId("days");
+  const hoursEl = byId("hours");
+  const minutesEl = byId("minutes");
+  const secondsEl = byId("seconds");
+
+  if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
+
+  daysEl.textContent = String(days);
+  hoursEl.textContent = String(hours);
+  minutesEl.textContent = String(minutes);
+  secondsEl.textContent = String(seconds);
+
+  byId("days-label").textContent = translations[currentLang].days;
+  byId("hours-label").textContent = translations[currentLang].hours;
+  byId("minutes-label").textContent = translations[currentLang].minutes;
+  byId("seconds-label").textContent = translations[currentLang].seconds;
+
+  setFill("days-card", Math.min(1, days / 365));
+  setFill("hours-card", hours / 24);
+  setFill("minutes-card", minutes / 60);
+  setFill("seconds-card", seconds / 60);
+}
+
+function startWordCycle(words) {
+  const wordEl = byId("dynamic-word");
+  if (!wordEl || !Array.isArray(words) || !words.length) return;
+
+  if (wordInterval) clearInterval(wordInterval);
+  let idx = 0;
+  wordEl.classList.remove("is-out");
+  wordEl.textContent = words[0];
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  wordInterval = setInterval(() => {
+    wordEl.classList.add("is-out");
+    setTimeout(() => {
+      idx = (idx + 1) % words.length;
+      wordEl.textContent = words[idx];
+      wordEl.classList.remove("is-out");
+    }, 240);
+  }, 2400);
+}
 
 function setLanguage(lang) {
-    currentLang = lang;
-    document.getElementById('main-message').innerHTML = translations[currentLang].mainMessage;
+  currentLang = lang;
+  const t = translations[currentLang];
 
-    // Initialize/Re-initialize TextScramble for dynamic-word
-    const dynamicWordEl = document.getElementById('dynamic-word');
-    if (dynamicWordEl) {
-        fx = new TextScramble(dynamicWordEl);
-        scrambleWords = translations[currentLang].dynamicWords;
-        // Stop any existing interval before starting a new one
-        if (updateDynamicWordInterval) {
-            clearInterval(updateDynamicWordInterval);
-        }
-        wordIndex = 0; // Reset word index on language change
-        fx.setText(scrambleWords[wordIndex % scrambleWords.length]).then(() => {
-            wordIndex++;
-            updateDynamicWordInterval = setInterval(() => {
-                fx.setText(scrambleWords[wordIndex % scrambleWords.length]);
-                wordIndex++;
-            }, 3000);
-        });
-    } else {
-        console.error("Element with ID 'dynamic-word' not found.");
-    }
+  document.title = t.title;
+  document.documentElement.lang = currentLang;
 
-    // Update countdown labels
-    updateCountdown();
+  byId("kicker").textContent = t.kicker;
+  byId("main-message").textContent = t.headline;
+  byId("sub-message").textContent = t.subhead;
+  byId("body-message").textContent = t.body;
+  byId("dynamic-label").textContent = t.dynamicLabel;
+  byId("countdown-title").textContent = t.countdownTitle;
+  byId("target-date").textContent = t.targetDate;
+  byId("reply-note").textContent = t.replyNote;
+  byId("footer-tagline").textContent = t.footerTagline;
 
-    // Update contact info email text
-    document.querySelector('.contact-info p').innerHTML = `${translations[currentLang].emailPrefix} <a href="mailto:adam.karl.lucien@luciensystems.io">adam.karl.lucien@luciensystems.io</a>`;
+  startWordCycle(t.dynamicWords);
+  updateCountdown();
 
-    // Update active flag
-    flagIcons.forEach(icon => icon.classList.remove('active'));
-    document.querySelector(`.flag-icon[data-lang="${lang}"]`).classList.add('active');
-
-    // Update page title
-    document.title = `LUCIEN SYSTEMS LLC - ${translations[currentLang].mainMessage}`;
+  const langButtons = document.querySelectorAll(".lang-btn");
+  langButtons.forEach((btn) => {
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle("active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+  });
 }
 
-flagIcons.forEach(icon => {
-    icon.addEventListener('click', () => {
-        const lang = icon.dataset.lang;
-        setLanguage(lang);
-    });
+const langButtons = document.querySelectorAll(".lang-btn");
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    const lang = btn.dataset.lang;
+    setLanguage(lang);
+  });
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+  const yearEl = byId("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-
-
-
-// --- Particle Animation ---
-const particleContainer = document.getElementById('particle-container');
-const particleCount = 70; // Number of particles
-const particleColors = ['#3f51b5', '#5c6bc0', '#7986cb']; // Shades of indigo blue
-
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.classList.add('particle');
-    particleContainer.appendChild(particle);
-
-    const size = Math.random() * 5 + 3; // Size between 3 and 8px
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.bottom = `-${size}px`; // Start from bottom
-    particle.style.animationDuration = `${Math.random() * 10 + 5}s`; // Duration 5-15s
-    particle.style.animationDelay = `-${Math.random() * 10}s`; // Start with some particles already in motion
-    particle.style.backgroundColor = particleColors[Math.floor(Math.random() * particleColors.length)];
-
-    particle.addEventListener('animationend', () => {
-        particle.remove();
-        createParticle(); // Recreate particle when one animation ends
-    });
-}
-
-function initParticles() {
-    for (let i = 0; i < particleCount; i++) {
-        createParticle();
-    }
-}
-
-
-// --- Development Animation (Icon-based Growth) ---
-const growthAnimationContainer = document.getElementById('growth-animation-container');
-const growthIcons = [
-    'fas fa-user',        // Individual
-    'fas fa-users',       // Small team
-    'fas fa-sitemap',     // Organization/structure
-    'fas fa-building',    // Company
-    'fas fa-globe'        // Global player
-];
-let currentGrowthStage = 0;
-
-function initGrowthAnimation() {
-    growthAnimationContainer.innerHTML = ''; // Clear previous icons
-    const iconElement = document.createElement('i');
-    iconElement.className = `growth-icon ${growthIcons[currentGrowthStage]}`;
-    growthAnimationContainer.appendChild(iconElement);
-    // Trigger initial animation for the first icon
-    setTimeout(() => {
-        iconElement.classList.add('stage-1');
-    }, 50);
-}
-
-function animateGrowthIcons() {
-    setInterval(() => {
-        currentGrowthStage = (currentGrowthStage + 1) % growthIcons.length;
-        growthAnimationContainer.innerHTML = ''; // Clear previous icon
-
-        const iconElement = document.createElement('i');
-        iconElement.className = `growth-icon ${growthIcons[currentGrowthStage]}`;
-        growthAnimationContainer.appendChild(iconElement);
-
-        // Trigger animation for the new icon
-        setTimeout(() => {
-            iconElement.classList.add('stage-1');
-        }, 50);
-
-    }, 2500); // Change icon every 2.5 seconds
-}
-
-window.addEventListener('resize', initGrowthAnimation); // Re-init on resize, if icons are responsive
-
-// --- Main Initialization ---
-let scrambleWords = translations[currentLang].dynamicWords;
-let wordIndex = 0;
-let fx; // fx declared globally here
-let updateDynamicWordInterval; // Declare globally
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize countdown
-    updateCountdown();
-    countdownInterval = setInterval(updateCountdown, 1000);
-
-    // Set initial language (this will also initialize TextScramble)
-    setLanguage(currentLang);
-
-    // Initialize particles
-    initParticles();
-
-    // Initialize growth animation
-    initGrowthAnimation();
-    animateGrowthIcons();
+  setLanguage(currentLang);
+  countdownInterval = setInterval(updateCountdown, 1000);
 });
